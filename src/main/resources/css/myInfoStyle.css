@@ -1,0 +1,48 @@
+/*모바일 버전*/
+@media (min-width: 500px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        margin-bottom: 130px;
+    }
+
+    header > img {
+        width: 350px;
+        height: fit-content;
+    }
+
+    table {
+        height: 450px;
+        border-collapse: collapse; /*이중선 제거*/
+        font-size: 40px;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    caption {
+        text-decoration: underline;
+        font-size: 45px;
+    }
+
+    th, td {
+        border-top: 1px solid black;
+        width: 300px;
+        height: 100px;
+    }
+
+    th {
+        border-right: 1px solid black;
+    }
+
+    tr:last-child {
+        border-bottom: 1px solid black;
+
+    }
+
+}
