@@ -1,5 +1,4 @@
 @media (min-width: 500px) {
-
     input::placeholder {
         font-size: 35px;
     }
@@ -15,7 +14,7 @@
         height: fit-content;
     }
 
-    #newPassword {
+    #updateInfo {
         font-size: 45px;
         width: 80%;
         display: flex;
@@ -23,21 +22,26 @@
         margin-top: 230px;
     }
 
-    #newPassword > label,
-    #newPassword > input,
-    #newPassword > div {
+    #updateInfo > label,
+    #updateInfo > input,
+    #updateInfo > div {
         margin-top: 30px;
 
     }
 
-    #newPassword > div {
+    #updateInfo > div {
         display: flex;
         justify-content: space-between;
     }
 
-    #newPassword > div > input:first-child {
+    #updateInfo > div > input:first-child {
         width: 100%;
         font-size: 30px;
+    }
+
+    .blank {
+        border-color: lightgray;
+        height: 90px;
     }
     div > img {
         width:80px;
@@ -46,22 +50,18 @@
         margin-top:10px;
         margin-left:650px;
     }
-    .blank {
-        border-color: lightgray;
-        height: 90px;
-    }
-
-    #newPassword > .button:last-child {
-        height: 150px;
-
-    }
-
     .button {
         background-color: lemonchiffon;
         border: none;
         font-size: 40px;
         border-radius: 30px;
+        height: 150px;
     }
 
+    a {
+        font-size:30px;
+        color: black;
 
+        align-items: center;
+    }
 }
