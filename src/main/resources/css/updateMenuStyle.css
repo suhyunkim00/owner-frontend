@@ -31,9 +31,13 @@
     #updateMenu > div > select{
         display: flex;
         justify-content: space-between;
-
+        height: 80px;
     }
 
+    /*#updateMenu > div {*/
+    /*    display: flex;*/
+    /*    justify-content: flex-start;*/
+    /*}*/
 
     #updateMenu > div {
         display: flex;
@@ -71,7 +75,6 @@
     a {
         font-size:30px;
         color: black;
-
         align-items: center;
     }
     select {
@@ -80,7 +83,7 @@
         height: 40%;
     }
     select > option {
-        font-size: 15px;
+        font-size: 10px;
     }
 
     button > img {
@@ -88,4 +91,16 @@
         width:100px;
         height: fit-content;
     }
+
+    #inputContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #inputContainer > input {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+    }
+
 }
