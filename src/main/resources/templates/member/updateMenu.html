@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../../css/updateMenu.css">
+    <link rel="stylesheet" href="../../css/updateMenuStyle.css">
     <meta charset="UTF-8">
     <title>메뉴 업데이트</title>
 </head>
@@ -14,12 +14,12 @@
 
     <label>날짜</label>
     <div>
-        <select name="year">
+        <select id="year">
             <option value="2024">2024년</option>
             <option value="2025">2025년</option>
         </select>
 
-        <select name="month">
+        <select id="month">
             <option value="1">1월</option>
             <option value="2">2월</option>
             <option value="3">3월</option>
@@ -34,7 +34,7 @@
             <option value="12">12월</option>
         </select>
 
-        <select name="date">
+        <select id="date">
             <option value="1">1일</option>
             <option value="2">2일</option>
             <option value="3">3일</option>
@@ -67,6 +67,8 @@
             <option value="30">30일</option>
             <option value="31">31일</option>
         </select>
+
+
     </div>
 
     <label>구분</label>
@@ -80,8 +82,12 @@
     <label>메인 메뉴 (최대 2개)</label>
     <div>
         <input class="blank" type="text" name="mainMenu1" id = "mainMenu1" value="" placeholder="제육볶음">
+<!--        <button onclick="addInput()" id="addInputBtn"> <img src="/img/free-icon-add-992651.png" alt="add"></button>-->
+        <button onclick="addMainMenu(event)" id="addInputBtn"> <img src="/img/free-icon-add-992651.png" alt="add"></button>
 
-        <button><img src="/img/free-icon-add-992651.png" alt="add"></button>
+    </div>
+    <div id="inputContainer">
+
     </div>
 
     <label>기타 메뉴</label>
@@ -90,14 +96,80 @@
         <hr>
         <input class="blank" type="text" name="subMenu2" id = "subMenu2" value="" placeholder="계란말이">
         <hr>
-        <button><img src="/img/free-icon-add-992651.png" alt="add"></button>
-    </div>
+<!--        <button><img src="/img/free-icon-add-992651.png" alt="add"></button>-->
+        <button onclick="addSubMenu(event)"><img src="/img/free-icon-add-992651.png" alt="add"></button>
 
+    </div>
+    <hr/><hr/><hr/>
     <div>
         <input class="button" type="submit" value="저장">
     </div>
 
 </form>
 
+<script>
+        var today = new Date();
+
+        var currentYear = today.getDate();
+        var currentMonth = today.getMonth()+1;
+        var currentDate = today.getDate();
+
+        var selectYear = document.getElementById("year");
+        for (var i = 0; i < selectYear.options.length; i++) {
+            if (parseInt(selectYear.options[i].value) === currentYear) {
+                selectYear.selectedIndex = i;
+                break;
+            }
+        }
+
+        var selectMonth = document.getElementById("month");
+        for (var i = 0; i < selectMonth.options.length; i++) {
+            if (parseInt(selectMonth.options[i].value) === currentMonth) {
+                selectMonth.selectedIndex = i;
+                break;
+            }
+        }
+
+        var selectDate = document.getElementById("date");
+        for (var i = 0; i < selectDate.options.length; i++) {
+            if (parseInt(selectDate.options[i].value) === currentDate) {
+                selectDate.selectedIndex = i;
+                break;
+            }
+        }
+    </script>
+
+<script>
+    //var inputElements = [];
+
+    // function addMainMenu(event) {
+    //     event.preventDefault(); // form의 기본 동작 중단
+    //
+    //     var newInput = document.createElement("input");
+    //     newInput.setAttribute("type", "text");
+    //     newInput.setAttribute("placeholder", "메인메뉴 추가");
+    //
+    //     inputElements.push(newInput);
+    //
+    //     var container = document.getElementById("updateMenu");
+    //     var submitButton = document.querySelector('input[type="submit"]'); // submit 버튼 찾기
+    //     container.insertBefore(newInput, submitButton); // submit 버튼 앞에 새로운 input 추가
+    // }
+    //
+    // function addSubMenu(event) {
+    //     event.preventDefault(); // form의 기본 동작 중단
+    //
+    //     var newSubMenu = document.createElement("input");
+    //     newSubMenu.setAttribute("type", "text");
+    //     newSubMenu.setAttribute("placeholder", "기타 메뉴 추가");
+    //
+    //     var hr = document.createElement("hr");
+    //
+    //     var container = document.querySelector('form div:last-child'); // 마지막 div 선택
+    //     container.insertBefore(newSubMenu, container.querySelector('button')); // 버튼 앞에 새로운 input 추가
+    //     container.insertBefore(hr, container.querySelector('button')); // 버튼 앞에 <hr> 추가
+    // }
+
+</script>
 </body>
 </html>
